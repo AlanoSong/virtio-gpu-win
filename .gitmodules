@@ -1,0 +1,6 @@
+[submodule "virtio-win-mesa"]
+	path = virtio-win-mesa
+	url = https://github.com/AlanoSong/virtio-win-mesa.git
+[submodule "kvm-guest-drivers-windows"]
+	path = kvm-guest-drivers-windows
+	url = https://github.com/AlanoSong/kvm-guest-drivers-windows.git
