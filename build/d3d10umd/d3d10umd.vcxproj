@@ -1,0 +1,930 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C42FDA0E-A0DF-DF52-72CE-4D5F7B19C906}</ProjectGuid>
+    <TemplateGuid>{2177f19c-eb4c-4687-9e7f-f9eec1f12cf1}</TemplateGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration>Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">x64</Platform>
+    <RootNamespace>d3d10umd</RootNamespace>
+    <WindowsTargetPlatformVersion>$(LatestTargetPlatformVersion)</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformToolset>WindowsUserModeDriver10.0</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <DriverTargetPlatform>Universal</DriverTargetPlatform>
+  </PropertyGroup>
+  <PropertyGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformToolset>WindowsUserModeDriver10.0</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <DriverTargetPlatform>Universal</DriverTargetPlatform>
+  </PropertyGroup>
+  <PropertyGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <PlatformToolset>WindowsUserModeDriver10.0</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <DriverTargetPlatform>Universal</DriverTargetPlatform>
+  </PropertyGroup>
+  <PropertyGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <PlatformToolset>WindowsUserModeDriver10.0</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <DriverTargetPlatform>Universal</DriverTargetPlatform>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <UMDF_VERSION_MAJOR>2</UMDF_VERSION_MAJOR>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <UMDF_VERSION_MAJOR>2</UMDF_VERSION_MAJOR>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <UMDF_VERSION_MAJOR>2</UMDF_VERSION_MAJOR>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <TargetVersion>Windows10</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <UMDF_VERSION_MAJOR>2</UMDF_VERSION_MAJOR>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebuggerFlavor>DbgengRemoteDebugger</DebuggerFlavor>
+    <EnableInf2cat>false</EnableInf2cat>
+    <IntDir>$(SolutionDir)$(Platform)\$(ConfigurationName)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerFlavor>DbgengRemoteDebugger</DebuggerFlavor>
+    <EnableInf2cat>false</EnableInf2cat>
+    <IntDir>$(SolutionDir)$(Platform)\$(ConfigurationName)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <DebuggerFlavor>DbgengRemoteDebugger</DebuggerFlavor>
+    <EnableInf2cat>false</EnableInf2cat>
+    <IntDir>$(SolutionDir)$(Platform)\$(ConfigurationName)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <DebuggerFlavor>DbgengRemoteDebugger</DebuggerFlavor>
+    <EnableInf2cat>false</EnableInf2cat>
+    <IntDir>$(SolutionDir)$(Platform)\$(ConfigurationName)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DriverSign>
+      <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
+    </DriverSign>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN64;_AMD64_;AMD64;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <LanguageStandard>Default</LanguageStandard>
+    </ClCompile>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DriverSign>
+      <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
+    </DriverSign>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN64;_AMD64_;AMD64;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <DriverSign>
+      <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
+    </DriverSign>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ARM64_;ARM64;_USE_DECLSPECS_FOR_SAL=1;STD_CALL;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <DriverSign>
+      <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
+    </DriverSign>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ARM64_;ARM64;_USE_DECLSPECS_FOR_SAL=1;STD_CALL;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <FilesToPackage Include="$(TargetPath)" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\meson.build" />
+    <None Include="..\..\virtio-win-mesa\src\gallium\targets\d3d10umd\d3d10.def.in" />
+    <None Include="..\..\virtio-win-mesa\src\util\format\meson.build" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\virtio-win-mesa\src\c11\impl\threads_win32.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\c11\impl\threads_win32_tls_callback.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\c11\impl\time.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\builtin_types.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\glsl_types.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_builder.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_builtin_builder.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_clone.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_constant_expressions.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_control_flow.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_deref.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_divergence_analysis.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_dominance.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_dominance_lca.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_fixup_is_exported.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_format_convert.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_from_ssa.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_functions.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_gather_info.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_gather_output_deps.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_gather_tcs_info.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_gather_types.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_gather_xfb_info.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_gs_count_vertices.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_inline_sysval.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_inline_uniforms.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_instr_set.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_intrinsics.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_io_add_const_offset_to_base.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_io_add_xfb_info.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_legacy.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_linking_helpers.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_liveness.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_loop_analyze.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_alpha.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_alu.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_alu_width.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_amul.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_array_deref_of_vec.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_atomics.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_atomics_to_ssbo.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_bitmap.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_bit_size.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_blend.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_bool_to_bitsize.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_bool_to_float.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_bool_to_int32.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_calls_to_builtins.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clamp_color_outputs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clip.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clip_cull_distance_array_vars.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clip_disable.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clip_halfz.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_cl_images.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_const_arrays_to_uniforms.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_continue_constructs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_convert_alu_types.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_cooperative_matrix.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_discard_if.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_double_ops.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_explicit_io.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_fb_read.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_flatshade.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_flrp.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_fp16_conv.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_fragcolor.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_fragcoord_wtrans.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_frag_coord_to_pixel_coord.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_frexp.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_global_vars_to_local.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_goto_ifs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_gs_intrinsics.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_halt_to_return.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_helper_writes.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_idiv.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_image.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_image_atomics_to_global.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_indirect_derefs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_input_attachments.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_int64.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_interpolation.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_int_to_float.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_io.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_io_array_vars_to_elements.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_io_indirect_loads.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_io_to_scalar.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_io_vars_to_scalar.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_io_vars_to_temporaries.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_is_helper_invocation.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_load_const_to_scalar.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_locals_to_regs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_mediump.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_memcpy.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_memory_model.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_mem_access_bit_sizes.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_multiview.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_non_uniform_access.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_packing.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_passthrough_edgeflags.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_patch_vertices.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_phis_to_scalar.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_pntc_ytransform.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_point_size.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_point_smooth.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_poly_line_smooth.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_printf.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_readonly_images_to_tex.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_reg_intrinsics_to_ssa.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_returns.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_robust_access.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_samplers.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_sample_shading.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_scratch.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_scratch_to_var.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_shader_calls.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_single_sampled.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_ssbo.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_subgroups.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_system_values.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_sysvals_to_varyings.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_task_shader.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_terminate_to_demote.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_tess_coord_z.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_tex.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_texcoord_replace.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_texcoord_replace_late.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_tex_shadow.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_two_sided_color.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_ubo_vec4.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_undef_to_zero.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_uniforms_to_ubo.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_variable_initializers.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_vars_to_ssa.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_var_copies.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_vec3_to_vec4.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_vec_to_regs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_viewport_transform.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_view_index_to_device_index.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_wpos_center.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_wpos_ytransform.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_wrmasks.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_metadata.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_mod_analysis.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_move_output_stores_to_end.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_move_vec_src_uses_to_dest.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_normalize_cubemap_coords.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opcodes.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_access.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_algebraic.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_barriers.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_call.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_clip_cull_const.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_combine_stores.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_comparison_pre.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_constant_folding.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_copy_propagate.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_copy_prop_vars.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_cse.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_dce.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_dead_cf.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_dead_write_vars.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_find_array_copies.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_fragdepth.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_frag_coord_to_pixel_coord.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_gcm.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_generate_bfi.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_group_loads.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_idiv_const.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_if.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_intrinsics.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_large_constants.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_licm.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_load_skip_helpers.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_load_store_vectorize.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_loop.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_loop_unroll.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_memcpy.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_move.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_move_discards_to_top.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_move_to_top.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_mqsad.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_non_uniform_access.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_offsets.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_peephole_select.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_phi_precision.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_phi_to_bool.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_preamble.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_ray_queries.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_reassociate.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_reassociate_bfi.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_rematerialize_compares.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_remove_phis.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_shrink_stores.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_shrink_vectors.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_sink.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_undef.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_uniform_atomics.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_uniform_subgroup.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_varyings.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_vectorize.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_vectorize_io.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opt_vectorize_io_vars.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_passthrough_gs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_passthrough_tcs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_phi_builder.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_print.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_propagate_invariant.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_range_analysis.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_recompute_io_bases.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_remove_dead_variables.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_remove_tex_shadow.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_repair_ssa.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_scale_fdiv.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_schedule.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_search.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_serialize.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_shader_bisect.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_split_64bit_vec3_and_vec4.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_split_conversions.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_split_per_member_structs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_split_vars.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_split_var_copies.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_sweep.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_to_lcssa.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_trivialize_registers.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_unlower_io_to_vars.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_use_dominance.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_validate.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_worklist.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\shader_enums.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\cso_cache\cso_cache.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\cso_cache\cso_context.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\cso_cache\cso_hash.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_ddebug\dd_context.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_ddebug\dd_draw.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_ddebug\dd_screen.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_noop\noop_pipe.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_noop\noop_state.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_context.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_dump.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_dump_state.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_screen.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_texture.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_util.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_video.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\indices\u_indices_gen.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\indices\u_primconvert.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\indices\u_unfilled_gen.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\rtasm\rtasm_execmem.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\rtasm\rtasm_x86sse.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_aa_point.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_build.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_dump.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_dynamic_indexing.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_exec.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_from_mesa.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_info.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_iterate.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_lowering.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_parse.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_point_sprite.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_sanity.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_scan.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_strings.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_text.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_transform.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_two_side.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_ureg.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_util.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_vpos.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\translate\translate.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\translate\translate_cache.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\translate\translate_generic.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\translate\translate_sse.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_async_debug.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_bitmask.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_blitter.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_debug_describe.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_debug_flush.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_debug_image.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_debug_refcnt.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_draw.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_draw_quad.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_dump_defines.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_dump_state.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_framebuffer.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_gen_mipmap.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_handle_table.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_helpers.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_index_modify.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_live_shader_cache.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_log.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_prim.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_prim_restart.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_pstipple.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_resource.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_sampler.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_sample_positions.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_screen.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_simple_shaders.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_split_draw.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_suballoc.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_surface.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_tests.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_texture.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_threaded_context.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_tile.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_trace_gallium.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_transfer.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_transfer_helper.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_upload_mgr.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_vbuf.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_vertex_state_cache.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Adapter.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\D3DKMT.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Debug.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Device.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Draw.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\DxgiFns.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Format.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\gdikmt_d3dddi.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\InputAssembly.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\OutputMerger.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Query.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Rasterizer.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Resource.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Shader.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\ShaderDump.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\ShaderParse.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\ShaderTGSI.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\targets\d3d10umd\d3d10_gdi.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\winsys\sw\gdi\gdi_sw_winsys.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\anon_file.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\bitscan.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\blake3\blake3.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\blake3\blake3_avx2.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\blake3\blake3_avx512.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\blake3\blake3_dispatch.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\blake3\blake3_portable.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\blake3\blake3_sse2.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\blake3\blake3_sse41.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\blob.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\build_id.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\cache_ops_null.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\cnd_monotonic.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\compress.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\crc32.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\dag.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\disk_cache.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\disk_cache_os.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\double.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\fast_idiv_by_const.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\float8.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_bptc.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_etc.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_fxt1.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_latc.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_other.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_pack.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_rgtc.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_s3tc.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_tests.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_unpack_neon.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_yuv.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_zs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\format_srgb.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\fossilize_db.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\futex.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\half_float.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\hash_table.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\helpers.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\log.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\lut.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\memstream.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\mesa-blake3.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\mesa-sha1.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\mesa_cache_db.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\mesa_cache_db_multipart.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\os_file.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\os_file_notify.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\os_memory_fd.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\os_misc.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\os_socket.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\os_time.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\parson.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\pb_slab.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\perf\u_trace.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\ralloc.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\rand_xor.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\range_minimum_query.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\rb_tree.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\register_allocate.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\rgtc.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\rwlock.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\set.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\sha1\sha1.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\simple_mtx.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\slab.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\softfloat.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\sparse_array.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\streaming-load-memcpy.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\string_buffer.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\strndup.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\strtod.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\thread_sched.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_atomic.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_call_once.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_cpu_detect.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_debug.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_debug_memory.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_debug_stack.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_debug_symbol.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_dl.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_dynarray.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_hash_table.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_idalloc.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_math.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_mm.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_printf.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_process.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_qsort.cpp" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_queue.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_range_remap.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_string.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_thread.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_vector.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\u_worklist.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\vl_zscan_data.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\vma.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\virtio-win-mesa\include\winddk\winddk_compat.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\glsl_types.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\list.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_builder.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_builtin_builder.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_constant_expressions.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_control_flow.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_control_flow_private.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_conversion_builder.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_defines.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_deref.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_format_convert.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_inline_helpers.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_instr_set.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_legacy.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_loop_analyze.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_blend.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_phi_builder.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_precompiled.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_range_analysis.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_schedule.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_search.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_search_helpers.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_serialize.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_shader_compiler_options.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_tcs_info.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_vla.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_worklist.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_xfb_info.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\shader_enums.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\shader_info.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\cso_cache\cso_cache.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\cso_cache\cso_context.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\cso_cache\cso_hash.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_context.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_dump.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_dump_defines.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_dump_state.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_public.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_screen.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_texture.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_video.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_aa_point.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_build.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_dump.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_dynamic_indexing.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_exec.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_from_mesa.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_info.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_info_opcodes.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_iterate.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_lowering.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_opcode_tmp.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_parse.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_point_sprite.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_sanity.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_scan.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_strings.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_text.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_transform.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_two_side.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_ureg.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_util.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_vpos.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_async_debug.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_bitcast.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_bitmask.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_blend.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_blitter.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_debug_cb.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_debug_describe.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_debug_flush.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_debug_image.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_debug_refcnt.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_draw.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_draw_quad.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_driconf.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_dual_blend.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_dump.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_file.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_framebuffer.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_gen_mipmap.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_handle_table.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_helpers.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_index_modify.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_inlines.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_live_shader_cache.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_log.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_prim.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_prim_restart.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_pstipple.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_pwr8.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_range.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_rect.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_resource.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_sampler.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_sample_positions.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_screen.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_simple_shaders.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_split_draw.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_split_prim.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_sse.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_suballoc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_surface.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_tests.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_texture.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_threaded_context.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_threaded_context_calls.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_tile.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_trace_gallium.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_transfer.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_transfer_helper.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_upload_mgr.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_vbuf.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_vertex_state_cache.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_video.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_viewport.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_bld_alpha.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_bld_blend.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_bld_depth.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_bld_interp.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_clear.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_context.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_cs_tpool.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_debug.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_fence.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_flush.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_jit.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_limits.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_linear_priv.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_linear_sampler_tmp.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_memory.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_perf.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_public.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_query.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_rast.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_rast_priv.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_rast_tri_tmp.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_scene.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_scene_queue.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_screen.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_setup.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_setup_context.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_state.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_state_cs.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_state_fs.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_state_setup.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_surface.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_test.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_texture.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_texture_handle.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_tex_sample.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Debug.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Device.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Draw.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\DriverIncludes.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\DxgiFns.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Format.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\gdikmt_d3dddi.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\InputAssembly.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\OutputMerger.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Query.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Rasterizer.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Resource.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Shader.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\ShaderDump.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\ShaderParse.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\State.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\include\pipe\p_context.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\include\pipe\p_defines.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\include\pipe\p_screen.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\include\pipe\p_shader_tokens.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\include\pipe\p_state.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\include\pipe\p_video_codec.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\include\pipe\p_video_enums.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\include\pipe\p_video_state.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\winsys\sw\gdi\gdi_sw_winsys.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\winsys\virgl\gdi\virgl_gdi_public.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\winsys\virgl\gdi\virgl_gdi_winsys.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\anon_file.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\bfloat.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\bigmath.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\bitpack_helpers.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\bitscan.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\bitset.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\blend.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\blob.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\box.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\build_id.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\cache_ops.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\cnd_monotonic.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\compiler.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\compress.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\crc32.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\dag.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\detect.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\detect_arch.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\detect_cc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\detect_os.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\disk_cache.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\disk_cache_os.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\double.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\driconf.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\drm_is_nouveau.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\enum_operators.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\fast_idiv_by_const.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\fast_urem_by_const.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\float8.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\format_utils.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\texcompress_bptc_tmp.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\texcompress_etc_tmp.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\texcompress_s3tc_tmp.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_formats.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_bptc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_etc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_fxt1.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_gen.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_latc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_other.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_pack.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_rgtc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_s3tc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_tests.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_yuv.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_zs.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format_r11g11b10f.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format_rgb9e5.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\format_srgb.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\fossilize_db.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\futex.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\glheader.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\half_float.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\hash_table.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\helpers.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\hex.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\libdrm.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\libsync.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\list.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\log.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\lut.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\macros.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\memstream.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\mesa-blake3.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\mesa-sha1.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\mesa_cache_db.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\mesa_cache_db_multipart.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\os_drm.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\os_file.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\os_file_notify.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\os_memory.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\os_memory_aligned.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\os_memory_debug.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\os_memory_fd.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\os_memory_stdc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\os_misc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\os_mman.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\os_socket.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\os_time.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\parson.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\pb_slab.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\ptralloc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\ralloc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\rand_xor.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\range_minimum_query.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\rb_tree.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\reallocarray.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\register_allocate.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\register_allocate_internal.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\rgtc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\rounding.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\rwlock.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\set.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\simple_mtx.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\slab.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\softfloat.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\sparse_array.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\stack_array.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\streaming-load-memcpy.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\string_buffer.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\strndup.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\strtod.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\texcompress_astc_luts.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\texcompress_astc_luts_wrap.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\texcompress_rgtc_tmp.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\thread_sched.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\timespec.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_atomic.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_call_once.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_cpu_detect.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_debug.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_debug_stack.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_debug_symbol.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_dl.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_drm.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_dynarray.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_endian.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_hash_table.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_hexdump.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_idalloc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_math.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_memory.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_memset.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_mm.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_overflow.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_pack_color.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_pointer.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_printf.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_process.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_qsort.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_queue.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_range_remap.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_string.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_sync_provider.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_thread.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_tristate.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_vector.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\u_worklist.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\vl_bitstream.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\vl_rbsp.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\vl_vlc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\vl_zscan_data.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\vma.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\xxhash.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
