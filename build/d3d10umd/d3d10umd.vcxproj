@@ -102,8 +102,8 @@
       <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
     </DriverSign>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_WIN64;_AMD64_;AMD64;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\virgl\common\;$(ProjectDir)..\..\virtio-win-mesa\src\virtio\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN64;_AMD64_;AMD64;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;GALLIUM_VIRGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
@@ -118,8 +118,8 @@
     </DriverSign>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_WIN64;_AMD64_;AMD64;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\virgl\common\;$(ProjectDir)..\..\virtio-win-mesa\src\virtio\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN64;_AMD64_;AMD64;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;GALLIUM_VIRGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <PreBuildEvent>
@@ -133,8 +133,8 @@
     </DriverSign>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_ARM64_;ARM64;_USE_DECLSPECS_FOR_SAL=1;STD_CALL;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\virgl\common\;$(ProjectDir)..\..\virtio-win-mesa\src\virtio\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ARM64_;ARM64;_USE_DECLSPECS_FOR_SAL=1;STD_CALL;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;GALLIUM_VIRGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <PreBuildEvent>
@@ -147,8 +147,8 @@
       <FileDigestAlgorithm>sha256</FileDigestAlgorithm>
     </DriverSign>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_ARM64_;ARM64;_USE_DECLSPECS_FOR_SAL=1;STD_CALL;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\virgl\common\;$(ProjectDir)..\..\virtio-win-mesa\src\virtio\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ARM64_;ARM64;_USE_DECLSPECS_FOR_SAL=1;STD_CALL;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;GALLIUM_VIRGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <PreBuildEvent>
@@ -414,6 +414,10 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\indices\u_indices_gen.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\indices\u_primconvert.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\indices\u_unfilled_gen.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_draw_helpers.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_to_tgsi.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_to_tgsi_info.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\tgsi_to_nir.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\rtasm\rtasm_execmem.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\rtasm\rtasm_x86sse.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_aa_point.c" />
@@ -473,12 +477,33 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_texture.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_threaded_context.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_tile.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_tracepoints.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_trace_gallium.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_transfer.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_transfer_helper.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_upload_mgr.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_vbuf.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_vertex_state_cache.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_compositor.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_compositor_cs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_compositor_gfx.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_csc.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_deint_filter.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_deint_filter_cs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_vertex_buffers.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_video_buffer.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_buffer.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_context.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_encode.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_query.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_resource.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_screen.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_staging_mgr.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_streamout.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_texture.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_tgsi.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_transfer_queue.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_video.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Adapter.cpp" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\D3DKMT.cpp" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Debug.cpp" />
@@ -498,6 +523,8 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\ShaderTGSI.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\targets\d3d10umd\d3d10_gdi.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\winsys\sw\gdi\gdi_sw_winsys.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\winsys\virgl\common\virgl_resource_cache.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\winsys\virgl\gdi\virgl_gdi_winsys.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\anon_file.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\bitscan.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\blake3\blake3.c" />
@@ -596,13 +623,16 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\util\u_worklist.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\vl_zscan_data.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\vma.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\xmlconfig.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\virtio-win-mesa\include\winddk\winddk_compat.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\builtin_types.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\glsl_types.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\list.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_builder.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_builder_opcodes.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_builtin_builder.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_constant_expressions.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_control_flow.h" />
@@ -613,9 +643,12 @@
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_format_convert.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_inline_helpers.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_instr_set.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_intrinsics.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_intrinsics_indices.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_legacy.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_loop_analyze.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_blend.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opcodes.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_phi_builder.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_precompiled.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_range_analysis.h" />
@@ -641,6 +674,11 @@
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_screen.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_texture.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_video.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_draw_helpers.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_to_tgsi.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_to_tgsi_info.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\pipe_nir.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\tgsi_to_nir.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_aa_point.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_build.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_dump.h" />
@@ -708,6 +746,7 @@
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_threaded_context.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_threaded_context_calls.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_tile.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_tracepoints.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_trace_gallium.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_transfer.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_transfer_helper.h" />
@@ -716,6 +755,19 @@
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_vertex_state_cache.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_video.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_viewport.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_codec.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_compositor.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_compositor_cs.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_compositor_gfx.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_csc.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_defines.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_deint_filter.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_deint_filter_cs.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_mpeg12_bitstream.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_types.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_vertex_buffers.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_video_buffer.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_winsys.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_bld_alpha.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_bld_blend.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_bld_depth.h" />
@@ -751,6 +803,15 @@
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_texture.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_texture_handle.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\llvmpipe\lp_tex_sample.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_context.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_encode.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_public.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_resource.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_screen.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_staging_mgr.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_transfer_queue.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_video.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_winsys.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Debug.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Device.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Draw.h" />
@@ -776,6 +837,7 @@
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\include\pipe\p_video_enums.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\include\pipe\p_video_state.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\winsys\sw\gdi\gdi_sw_winsys.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\winsys\virgl\common\virgl_resource_cache.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\winsys\virgl\gdi\virgl_gdi_public.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\winsys\virgl\gdi\virgl_gdi_winsys.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\util\anon_file.h" />
@@ -802,6 +864,7 @@
     <ClInclude Include="..\..\virtio-win-mesa\src\util\disk_cache_os.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\util\double.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\util\driconf.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\driconf_static.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\util\drm_is_nouveau.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\util\enum_operators.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\util\fast_idiv_by_const.h" />
@@ -922,7 +985,14 @@
     <ClInclude Include="..\..\virtio-win-mesa\src\util\vl_vlc.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\util\vl_zscan_data.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\util\vma.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\xmlconfig.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\util\xxhash.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\virtio\virtio-gpu\drm_hw.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\virtio\virtio-gpu\venus_hw.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\virtio\virtio-gpu\virgl_hw.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\virtio\virtio-gpu\virgl_protocol.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\virtio\virtio-gpu\virgl_video_hw.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\virtio\virtio-gpu\virtgpu_gfxstream_protocol.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

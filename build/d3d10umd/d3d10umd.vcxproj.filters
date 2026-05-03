@@ -173,6 +173,42 @@
     <Filter Include="Source Files\src\gallium\auxiliary\rtasm">
       <UniqueIdentifier>{398a0e59-e671-45c7-8688-6844b5f7e9b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\src\gallium\winsys\virgl">
+      <UniqueIdentifier>{218c610e-3fd4-4c68-b3c9-8a43cc49d21b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\gallium\winsys\virgl\gdi">
+      <UniqueIdentifier>{ceeb16b2-e132-4dc1-8bc7-2988ff25e021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\src\virtio">
+      <UniqueIdentifier>{ac76426f-a27e-4aac-87e9-a6c2d644a9fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\src\virtio\virtio-gpu">
+      <UniqueIdentifier>{15bace25-66e3-42a9-acdf-889d986f32da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\src\gallium\winsys\virgl\common">
+      <UniqueIdentifier>{973c5beb-4cbe-4410-ba30-b5336febac51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\gallium\drivers">
+      <UniqueIdentifier>{32c6327a-c080-47b9-a325-c329218d00e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\gallium\drivers\virgl">
+      <UniqueIdentifier>{2ff8bded-7b3f-4acf-b15c-c81f2882e0fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\gallium\auxiliary\nir">
+      <UniqueIdentifier>{3340ea11-16d6-458e-99c0-60728c9272bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\src\gallium\auxiliary\nir">
+      <UniqueIdentifier>{7d1ce8f6-388c-45bf-8ba5-06d751298efe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\gallium\auxiliary\vl">
+      <UniqueIdentifier>{8cd2e46a-4467-4900-8e2a-8e574db22307}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\src\gallium\auxiliary\vl">
+      <UniqueIdentifier>{a5e7a499-e47e-49d3-96fb-8cfdc3e0a4a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\gallium\winsys\virgl\common">
+      <UniqueIdentifier>{2ef5b5a3-de3a-4ed6-b3ca-87044cf95ab9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\virtio-win-mesa\src\gallium\targets\d3d10umd\d3d10.def.in">
@@ -1479,6 +1515,90 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\indices\u_primconvert.c">
       <Filter>Source Files\src\gallium\auxiliary\indices</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\winsys\virgl\gdi\virgl_gdi_winsys.c">
+      <Filter>Source Files\src\gallium\winsys\virgl\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_tracepoints.c">
+      <Filter>Source Files\src\gallium\auxiliary\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_buffer.c">
+      <Filter>Source Files\src\gallium\drivers\virgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_context.c">
+      <Filter>Source Files\src\gallium\drivers\virgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_encode.c">
+      <Filter>Source Files\src\gallium\drivers\virgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_query.c">
+      <Filter>Source Files\src\gallium\drivers\virgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_resource.c">
+      <Filter>Source Files\src\gallium\drivers\virgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_screen.c">
+      <Filter>Source Files\src\gallium\drivers\virgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_staging_mgr.c">
+      <Filter>Source Files\src\gallium\drivers\virgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_streamout.c">
+      <Filter>Source Files\src\gallium\drivers\virgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_texture.c">
+      <Filter>Source Files\src\gallium\drivers\virgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_tgsi.c">
+      <Filter>Source Files\src\gallium\drivers\virgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_transfer_queue.c">
+      <Filter>Source Files\src\gallium\drivers\virgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_video.c">
+      <Filter>Source Files\src\gallium\drivers\virgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_draw_helpers.c">
+      <Filter>Source Files\src\gallium\auxiliary\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_to_tgsi.c">
+      <Filter>Source Files\src\gallium\auxiliary\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_to_tgsi_info.c">
+      <Filter>Source Files\src\gallium\auxiliary\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\tgsi_to_nir.c">
+      <Filter>Source Files\src\gallium\auxiliary\nir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_compositor.c">
+      <Filter>Source Files\src\gallium\auxiliary\vl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_compositor_cs.c">
+      <Filter>Source Files\src\gallium\auxiliary\vl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_compositor_gfx.c">
+      <Filter>Source Files\src\gallium\auxiliary\vl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_csc.c">
+      <Filter>Source Files\src\gallium\auxiliary\vl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_deint_filter.c">
+      <Filter>Source Files\src\gallium\auxiliary\vl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_deint_filter_cs.c">
+      <Filter>Source Files\src\gallium\auxiliary\vl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_vertex_buffers.c">
+      <Filter>Source Files\src\gallium\auxiliary\vl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_video_buffer.c">
+      <Filter>Source Files\src\gallium\auxiliary\vl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\winsys\virgl\common\virgl_resource_cache.c">
+      <Filter>Source Files\src\gallium\winsys\virgl\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\util\xmlconfig.c">
+      <Filter>Source Files\src\util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Debug.h">
@@ -2455,6 +2575,132 @@
     </ClInclude>
     <ClInclude Include="..\..\virtio-win-mesa\src\util\format\u_format_gen.h">
       <Filter>Header Files\src\util\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\builtin_types.h">
+      <Filter>Header Files\src\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_builder_opcodes.h">
+      <Filter>Header Files\src\compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_intrinsics.h">
+      <Filter>Header Files\src\compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_intrinsics_indices.h">
+      <Filter>Header Files\src\compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\compiler\nir\nir_opcodes.h">
+      <Filter>Header Files\src\compiler\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\util\u_tracepoints.h">
+      <Filter>Header Files\src\gallium\auxiliary\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\virtio\virtio-gpu\drm_hw.h">
+      <Filter>Header Files\src\virtio\virtio-gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\virtio\virtio-gpu\venus_hw.h">
+      <Filter>Header Files\src\virtio\virtio-gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\virtio\virtio-gpu\virgl_hw.h">
+      <Filter>Header Files\src\virtio\virtio-gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\virtio\virtio-gpu\virgl_protocol.h">
+      <Filter>Header Files\src\virtio\virtio-gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\virtio\virtio-gpu\virgl_video_hw.h">
+      <Filter>Header Files\src\virtio\virtio-gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\virtio\virtio-gpu\virtgpu_gfxstream_protocol.h">
+      <Filter>Header Files\src\virtio\virtio-gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\winsys\virgl\common\virgl_resource_cache.h">
+      <Filter>Header Files\src\gallium\winsys\virgl\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_context.h">
+      <Filter>Header Files\src\gallium\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_encode.h">
+      <Filter>Header Files\src\gallium\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_public.h">
+      <Filter>Header Files\src\gallium\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_resource.h">
+      <Filter>Header Files\src\gallium\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_screen.h">
+      <Filter>Header Files\src\gallium\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_staging_mgr.h">
+      <Filter>Header Files\src\gallium\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_transfer_queue.h">
+      <Filter>Header Files\src\gallium\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_video.h">
+      <Filter>Header Files\src\gallium\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\drivers\virgl\virgl_winsys.h">
+      <Filter>Header Files\src\gallium\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_draw_helpers.h">
+      <Filter>Header Files\src\gallium\auxiliary\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_to_tgsi.h">
+      <Filter>Header Files\src\gallium\auxiliary\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_to_tgsi_info.h">
+      <Filter>Header Files\src\gallium\auxiliary\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\pipe_nir.h">
+      <Filter>Header Files\src\gallium\auxiliary\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\tgsi_to_nir.h">
+      <Filter>Header Files\src\gallium\auxiliary\nir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_codec.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_compositor.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_compositor_cs.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_compositor_gfx.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_csc.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_defines.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_deint_filter.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_deint_filter_cs.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_mpeg12_bitstream.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_types.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_vertex_buffers.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_video_buffer.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\vl\vl_winsys.h">
+      <Filter>Header Files\src\gallium\auxiliary\vl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\xmlconfig.h">
+      <Filter>Header Files\src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\util\driconf_static.h">
+      <Filter>Header Files\src\util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

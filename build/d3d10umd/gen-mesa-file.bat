@@ -3,6 +3,7 @@ set MESA_ROOT=%~dp0..\..\virtio-win-mesa\
 :: virtio-win-mesa\src\util
 set UTIL_DIR=%MESA_ROOT%src\util\
 python %UTIL_DIR%format_srgb.py > %UTIL_DIR%format_srgb.c
+python %UTIL_DIR%driconf_static.py %UTIL_DIR%00-mesa-defaults.conf %UTIL_DIR%driconf_static.h
 
 :: virtio-win-mesa\src\util\format
 set FMT_DIR=%MESA_ROOT%src\util\format\
