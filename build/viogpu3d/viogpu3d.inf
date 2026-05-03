@@ -12,16 +12,15 @@ CatalogFile = viogpu3d.cat
 PnpLockdown = 1
 
 [DestinationDirs]
-VioGpu3D_File.Driver = 13 ; driver store
-VioGpu3D_File.Usermode = 11 ; system32
-VioGpu3D_File.Vulkan = 11 ; system32
+VioGpu3D_File.KernelMode = 13 ; driver store
+VioGpu3D_File.UserMode = 11 ; system32
 
 [SourceDisksNames]
 1 = %DiskName%,,,""
 
 [SourceDisksFiles]
 viogpu3d.sys = 1,,f
-d3d10umd.dll = 1,x64,
+d3d10umd.dll = 1,,
 
 [Manufacturer]
 %VioGpu3D% = VioGpu3D, NT$ARCH$.10.0...16299
@@ -29,16 +28,16 @@ d3d10umd.dll = 1,x64,
 [VioGpu3D.NT$ARCH$.10.0...16299]
 %VioGpu3D.DeviceDesc% = VioGpu3D_Inst, PCI\VEN_1AF4&DEV_1050&SUBSYS_11001AF4&REV_01
 
-[VioGpu3D_File.Driver]
+[VioGpu3D_File.KernelMode]
 viogpu3d.sys,,,2
 
-[VioGpu3D_File.Usermode]
+[VioGpu3D_File.UserMode]
 d3d10umd.dll,,,0
 
 [VioGpu3D_Inst.NT]
 Include = msdv.inf
 FeatureScore = F9
-CopyFiles = VioGpu3D_File.Driver, VioGpu3D_File.Usermode
+CopyFiles = VioGpu3D_File.KernelMode, VioGpu3D_File.UserMode
 AddReg = VioGpu3D_DeviceSettings
 
 [VioGpu3D_Inst.NT.Services]
