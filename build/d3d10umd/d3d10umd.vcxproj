@@ -53,21 +53,25 @@
     <TargetVersion>Windows10</TargetVersion>
     <UseDebugLibraries>true</UseDebugLibraries>
     <UMDF_VERSION_MAJOR>2</UMDF_VERSION_MAJOR>
+    <Driver_SpectreMitigation>Spectre</Driver_SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <TargetVersion>Windows10</TargetVersion>
     <UseDebugLibraries>false</UseDebugLibraries>
     <UMDF_VERSION_MAJOR>2</UMDF_VERSION_MAJOR>
+    <Driver_SpectreMitigation>Spectre</Driver_SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
     <TargetVersion>Windows10</TargetVersion>
     <UseDebugLibraries>true</UseDebugLibraries>
     <UMDF_VERSION_MAJOR>2</UMDF_VERSION_MAJOR>
+    <Driver_SpectreMitigation>Spectre</Driver_SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
     <TargetVersion>Windows10</TargetVersion>
     <UseDebugLibraries>false</UseDebugLibraries>
     <UMDF_VERSION_MAJOR>2</UMDF_VERSION_MAJOR>
+    <Driver_SpectreMitigation>Spectre</Driver_SpectreMitigation>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -106,11 +110,15 @@
       <PreprocessorDefinitions>_WIN64;_AMD64_;AMD64;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;GALLIUM_VIRGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <LanguageStandard>Default</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <PreBuildEvent>
       <Command>
       </Command>
     </PreBuildEvent>
+    <Link>
+      <ModuleDefinitionFile>d3d10umd.def</ModuleDefinitionFile>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DriverSign>
@@ -121,11 +129,15 @@
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\virgl\common\;$(ProjectDir)..\..\virtio-win-mesa\src\virtio\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WIN64;_AMD64_;AMD64;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;GALLIUM_VIRGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <PreBuildEvent>
       <Command>
       </Command>
     </PreBuildEvent>
+    <Link>
+      <ModuleDefinitionFile>d3d10umd.def</ModuleDefinitionFile>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <DriverSign>
@@ -136,11 +148,15 @@
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\virgl\common\;$(ProjectDir)..\..\virtio-win-mesa\src\virtio\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_ARM64_;ARM64;_USE_DECLSPECS_FOR_SAL=1;STD_CALL;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;GALLIUM_VIRGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <PreBuildEvent>
       <Command>
       </Command>
     </PreBuildEvent>
+    <Link>
+      <ModuleDefinitionFile>d3d10umd.def</ModuleDefinitionFile>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <DriverSign>
@@ -150,11 +166,15 @@
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\virtio-win-mesa\src\;$(ProjectDir)..\..\virtio-win-mesa\src\util\;$(ProjectDir)..\..\virtio-win-mesa\include\;$(ProjectDir)..\..\virtio-win-mesa\include\winddk\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\util\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\auxiliary\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\include\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\drivers\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\;$(ProjectDir)..\..\virtio-win-mesa\src\compiler\nir\;$(ProjectDir)..\..\virtio-win-mesa\src\gallium\winsys\virgl\common\;$(ProjectDir)..\..\virtio-win-mesa\src\virtio\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_ARM64_;ARM64;_USE_DECLSPECS_FOR_SAL=1;STD_CALL;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;GALLIUM_VIRGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <PreBuildEvent>
       <Command>
       </Command>
     </PreBuildEvent>
+    <Link>
+      <ModuleDefinitionFile>d3d10umd.def</ModuleDefinitionFile>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <FilesToPackage Include="$(TargetPath)" />
@@ -163,6 +183,7 @@
     <None Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\meson.build" />
     <None Include="..\..\virtio-win-mesa\src\gallium\targets\d3d10umd\d3d10.def.in" />
     <None Include="..\..\virtio-win-mesa\src\util\format\meson.build" />
+    <None Include="d3d10umd.def" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\virtio-win-mesa\src\c11\impl\threads_win32.c" />

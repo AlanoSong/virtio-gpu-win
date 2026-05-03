@@ -1,0 +1,4 @@
+LIBRARY d3d10umd
+EXPORTS
+    OpenAdapter10
+    OpenAdapter10_2
