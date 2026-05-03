@@ -25,15 +25,15 @@ permissions:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-2022
+    strategy:
+      matrix:
+        platform: [x64]
 
     steps:
     - uses: actions/checkout@v4
       with:
         submodules: true
-
-    - name: Install WDK
-      run: winget install --id Microsoft.WindowsDriverKit --exact --accept-source-agreements --accept-package-agreements
 
     - name: Setup python
       uses: actions/setup-python@v5
@@ -58,4 +58,4 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
-      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
+      run: msbuild /m /p:Platform=${{matrix.platform}} /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
