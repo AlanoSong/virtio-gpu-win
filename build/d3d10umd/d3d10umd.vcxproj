@@ -111,6 +111,7 @@
       <TreatWarningAsError>false</TreatWarningAsError>
       <LanguageStandard>Default</LanguageStandard>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level2</WarningLevel>
     </ClCompile>
     <PreBuildEvent>
       <Command>
@@ -130,6 +131,7 @@
       <PreprocessorDefinitions>_WIN64;_AMD64_;AMD64;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;GALLIUM_VIRGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level2</WarningLevel>
     </ClCompile>
     <PreBuildEvent>
       <Command>
@@ -149,6 +151,7 @@
       <PreprocessorDefinitions>_ARM64_;ARM64;_USE_DECLSPECS_FOR_SAL=1;STD_CALL;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;GALLIUM_VIRGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level2</WarningLevel>
     </ClCompile>
     <PreBuildEvent>
       <Command>
@@ -167,6 +170,7 @@
       <PreprocessorDefinitions>_ARM64_;ARM64;_USE_DECLSPECS_FOR_SAL=1;STD_CALL;_CRT_SECURE_NO_WARNINGS;HAVE_STRUCT_TIMESPEC;NO_REGEX;GALLIUM_VIRGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level2</WarningLevel>
     </ClCompile>
     <PreBuildEvent>
       <Command>
