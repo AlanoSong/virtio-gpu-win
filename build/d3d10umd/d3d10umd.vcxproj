@@ -436,6 +436,7 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_texture.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_util.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_video.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\gdikmt\gdikmt_d3dkmt.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\indices\u_indices_gen.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\indices\u_primconvert.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\indices\u_unfilled_gen.c" />
@@ -699,6 +700,7 @@
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_screen.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_texture.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\driver_trace\tr_video.h" />
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\gdikmt\gdikmt.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_draw_helpers.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_to_tgsi.h" />
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\nir\nir_to_tgsi_info.h" />

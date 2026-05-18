@@ -209,6 +209,12 @@
     <Filter Include="Source Files\src\gallium\winsys\virgl\common">
       <UniqueIdentifier>{2ef5b5a3-de3a-4ed6-b3ca-87044cf95ab9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\src\gallium\auxiliary\gdikmt">
+      <UniqueIdentifier>{8c7b6bc8-4525-4880-b3f5-1a9140079092}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\src\gallium\auxiliary\gdikmt">
+      <UniqueIdentifier>{81d23ff9-f24d-470a-a6ce-1ab8342a5f00}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\virtio-win-mesa\src\gallium\targets\d3d10umd\d3d10.def.in">
@@ -1602,6 +1608,9 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\util\xmlconfig.c">
       <Filter>Source Files\src\util</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\gdikmt\gdikmt_d3dkmt.c">
+      <Filter>Source Files\src\gallium\auxiliary\gdikmt</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Debug.h">
@@ -2704,6 +2713,9 @@
     </ClInclude>
     <ClInclude Include="..\..\virtio-win-mesa\src\util\driconf_static.h">
       <Filter>Header Files\src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\virtio-win-mesa\src\gallium\auxiliary\gdikmt\gdikmt.h">
+      <Filter>Header Files\src\gallium\auxiliary\gdikmt</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
