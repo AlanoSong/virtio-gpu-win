@@ -399,9 +399,6 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\util\mesa-blake3.c">
       <Filter>Source Files\src\util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\virtio-win-mesa\src\util\mesa-sha1.c">
-      <Filter>Source Files\src\util</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\virtio-win-mesa\src\util\os_file.c">
       <Filter>Source Files\src\util</Filter>
     </ClCompile>
@@ -717,9 +714,6 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_intrinsics.c">
       <Filter>Source Files\src\compiler\nir</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_io_add_const_offset_to_base.c">
-      <Filter>Source Files\src\compiler\nir</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_io_add_xfb_info.c">
       <Filter>Source Files\src\compiler\nir</Filter>
     </ClCompile>
@@ -765,9 +759,6 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_blend.c">
       <Filter>Source Files\src\compiler\nir</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_bool_to_bitsize.c">
-      <Filter>Source Files\src\compiler\nir</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_bool_to_float.c">
       <Filter>Source Files\src\compiler\nir</Filter>
     </ClCompile>
@@ -784,9 +775,6 @@
       <Filter>Source Files\src\compiler\nir</Filter>
     </ClCompile>
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clip.c">
-      <Filter>Source Files\src\compiler\nir</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clip_cull_distance_array_vars.c">
       <Filter>Source Files\src\compiler\nir</Filter>
     </ClCompile>
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clip_disable.c">
@@ -862,9 +850,6 @@
       <Filter>Source Files\src\compiler\nir</Filter>
     </ClCompile>
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_image_atomics_to_global.c">
-      <Filter>Source Files\src\compiler\nir</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_indirect_derefs.c">
       <Filter>Source Files\src\compiler\nir</Filter>
     </ClCompile>
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_input_attachments.c">
@@ -1385,9 +1370,6 @@
     </ClCompile>
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\tgsi\tgsi_vpos.c">
       <Filter>Source Files\src\gallium\auxiliary\tgsi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\virtio-win-mesa\src\util\sha1\sha1.c">
-      <Filter>Source Files\src\util\sha1</Filter>
     </ClCompile>
     <ClCompile Include="..\..\virtio-win-mesa\src\util\format\u_format_bptc.c">
       <Filter>Source Files\src\util\format</Filter>

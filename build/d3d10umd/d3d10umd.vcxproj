@@ -219,7 +219,6 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_inline_uniforms.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_instr_set.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_intrinsics.c" />
-    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_io_add_const_offset_to_base.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_io_add_xfb_info.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_legacy.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_linking_helpers.c" />
@@ -235,13 +234,11 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_bitmap.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_bit_size.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_blend.c" />
-    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_bool_to_bitsize.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_bool_to_float.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_bool_to_int32.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_calls_to_builtins.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clamp_color_outputs.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clip.c" />
-    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clip_cull_distance_array_vars.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clip_disable.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_clip_halfz.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_cl_images.c" />
@@ -268,7 +265,7 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_idiv.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_image.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_image_atomics_to_global.c" />
-    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_indirect_derefs.c" />
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_indirect_derefs_to_if_else_trees.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_input_attachments.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_int64.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_interpolation.c" />
@@ -595,7 +592,6 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\util\lut.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\memstream.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\mesa-blake3.c" />
-    <ClCompile Include="..\..\virtio-win-mesa\src\util\mesa-sha1.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\mesa_cache_db.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\mesa_cache_db_multipart.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\os_file.c" />
@@ -615,7 +611,6 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\util\rgtc.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\rwlock.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\set.c" />
-    <ClCompile Include="..\..\virtio-win-mesa\src\util\sha1\sha1.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\simple_mtx.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\slab.c" />
     <ClCompile Include="..\..\virtio-win-mesa\src\util\softfloat.c" />

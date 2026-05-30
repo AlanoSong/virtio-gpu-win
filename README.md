@@ -3,7 +3,9 @@
 - In this project, KMD corresponds to `viogpu3d`, and UMD corresponds to `d3d10umd`.
 - The whole architecture is like the following:
 
-<img src="./doc/virtio-gpu-arch.png" width="600">
+<div align="center">
+    <img src="./doc/virtio-gpu-arch.png" width="600">
+</div>
 
 - Terminology used in this document:
 - **Host machine**: The Windows system used to build the driver and run WinDBG.

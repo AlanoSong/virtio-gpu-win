@@ -36,7 +36,7 @@ python %AUX_UTIL_DIR%u_tracepoints.py -p %PERF_DIR% -H %AUX_UTIL_DIR%u_tracepoin
 
 :: virtio-win-mesa\src\gallium\auxiliary\driver_trace
 set AUX_TR_DIR=%MESA_ROOT%src\gallium\auxiliary\driver_trace\
-python %AUX_TR_DIR%enums2names.py %AUX_TR_DIR%..\..\include/pipe/p_defines.h %AUX_TR_DIR%../../include/pipe/p_video_enums.h %AUX_TR_DIR%../../../util/blend.h -C %AUX_TR_DIR%tr_util.c -H %AUX_TR_DIR%tr_util.h -I %AUX_TR_DIR%tr_util.h
+python %AUX_TR_DIR%enums2names.py %AUX_TR_DIR%..\..\include\pipe\p_defines.h %AUX_TR_DIR%..\..\include\pipe\p_video_enums.h %AUX_TR_DIR%..\..\..\util\blend.h -C %AUX_TR_DIR%tr_util.c -H %AUX_TR_DIR%tr_util.h
 
 :: virtio-win-mesa\src\gallium\auxiliary\indices
 set AUX_IDX=%MESA_ROOT%src\gallium\auxiliary\indices\
