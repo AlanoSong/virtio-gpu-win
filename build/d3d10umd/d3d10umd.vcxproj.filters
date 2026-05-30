@@ -1593,6 +1593,9 @@
     <ClCompile Include="..\..\virtio-win-mesa\src\gallium\auxiliary\gdikmt\gdikmt_d3dkmt.c">
       <Filter>Source Files\src\gallium\auxiliary\gdikmt</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\virtio-win-mesa\src\compiler\nir\nir_lower_indirect_derefs_to_if_else_trees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\virtio-win-mesa\src\gallium\frontends\d3d10umd\Debug.h">

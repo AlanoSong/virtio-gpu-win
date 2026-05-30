@@ -114,8 +114,8 @@
       <WarningLevel>Level2</WarningLevel>
     </ClCompile>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>echo Prebuild generate mesa files...
+$(ProjectDir)prebuild-gen-file.bat</Command>
     </PreBuildEvent>
     <Link>
       <ModuleDefinitionFile>d3d10umd.def</ModuleDefinitionFile>
@@ -134,8 +134,8 @@
       <WarningLevel>Level2</WarningLevel>
     </ClCompile>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>echo Prebuild generate mesa files...
+$(ProjectDir)prebuild-gen-file.bat</Command>
     </PreBuildEvent>
     <Link>
       <ModuleDefinitionFile>d3d10umd.def</ModuleDefinitionFile>
@@ -154,8 +154,8 @@
       <WarningLevel>Level2</WarningLevel>
     </ClCompile>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>echo Prebuild generate mesa files...
+$(ProjectDir)prebuild-gen-file.bat</Command>
     </PreBuildEvent>
     <Link>
       <ModuleDefinitionFile>d3d10umd.def</ModuleDefinitionFile>
@@ -173,8 +173,8 @@
       <WarningLevel>Level2</WarningLevel>
     </ClCompile>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>echo Prebuild generate mesa files...
+$(ProjectDir)prebuild-gen-file.bat</Command>
     </PreBuildEvent>
     <Link>
       <ModuleDefinitionFile>d3d10umd.def</ModuleDefinitionFile>
